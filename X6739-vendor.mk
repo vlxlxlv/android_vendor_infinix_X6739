@@ -211,7 +211,6 @@ PRODUCT_COPY_FILES += \
     vendor/infinix/X6739/proprietary/vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.c2@1.2-mediatek.rc \
     vendor/infinix/X6739/proprietary/vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc \
     vendor/infinix/X6739/proprietary/vendor/etc/init/android.hardware.thermal@2.0-service.mtk.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.thermal@2.0-service.mtk.rc \
-    vendor/infinix/X6739/proprietary/vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc \
     vendor/infinix/X6739/proprietary/vendor/etc/init/camerahalserver.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/camerahalserver.rc \
     vendor/infinix/X6739/proprietary/vendor/etc/init/fuelgauged_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/fuelgauged_init.rc \
     vendor/infinix/X6739/proprietary/vendor/etc/init/fuelgauged_nvram_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/fuelgauged_nvram_init.rc \
@@ -250,7 +249,6 @@ PRODUCT_COPY_FILES += \
     vendor/infinix/X6739/proprietary/vendor/etc/init/vendor.transsion.hardware.trancam.trancamserver@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.transsion.hardware.trancam.trancamserver@1.0-service.rc \
     vendor/infinix/X6739/proprietary/vendor/etc/init/vendor.trustonic.tee@1.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.trustonic.tee@1.1-service.rc \
     vendor/infinix/X6739/proprietary/vendor/etc/init/volte_clientapi_ua.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/volte_clientapi_ua.rc \
-    vendor/infinix/X6739/proprietary/vendor/etc/init/wlan_assistant.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wlan_assistant.rc \
     vendor/infinix/X6739/proprietary/vendor/etc/libnfc-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf \
     vendor/infinix/X6739/proprietary/vendor/etc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     vendor/infinix/X6739/proprietary/vendor/etc/mpe.conf:$(TARGET_COPY_OUT_VENDOR)/etc/mpe.conf \
@@ -266,6 +264,7 @@ PRODUCT_COPY_FILES += \
     vendor/infinix/X6739/proprietary/vendor/etc/virtual-spn-conf-by-efpnn.xml:$(TARGET_COPY_OUT_VENDOR)/etc/virtual-spn-conf-by-efpnn.xml \
     vendor/infinix/X6739/proprietary/vendor/etc/virtual-spn-conf-by-efspn.xml:$(TARGET_COPY_OUT_VENDOR)/etc/virtual-spn-conf-by-efspn.xml \
     vendor/infinix/X6739/proprietary/vendor/etc/virtual-spn-conf-by-imsi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/virtual-spn-conf-by-imsi.xml \
+    vendor/infinix/X6739/proprietary/vendor/etc/wfd_source_capability.csv:$(TARGET_COPY_OUT_VENDOR)/etc/wfd_source_capability.csv \
     vendor/infinix/X6739/proprietary/vendor/firmware/BT_FW.cfg:$(TARGET_COPY_OUT_VENDOR)/firmware/BT_FW.cfg \
     vendor/infinix/X6739/proprietary/vendor/firmware/Conf_MultipleTest_00.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/Conf_MultipleTest_00.ini \
     vendor/infinix/X6739/proprietary/vendor/firmware/WIFI_RAM_CODE_soc3_0_1a_1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/WIFI_RAM_CODE_soc3_0_1a_1.bin \
@@ -332,7 +331,6 @@ PRODUCT_PACKAGES += \
     VP9SecureVdecCA_510 \
     libAVCSecureVencCA_510 \
     libTEECommon \
-    libaedv \
     libapu_mdw \
     libapu_mdw_batch \
     libapusys \
@@ -346,14 +344,13 @@ PRODUCT_PACKAGES += \
     libcodec2_vpp_qt_plugin \
     libcodec2_vpp_rs_plugin \
     libfgauge_gm30 \
-    libformatter \
+    libformatter_mtk \
     libgz_gp_client \
     libgz_uree \
     libhevce_sb.ca7.android \
     libion_mtk \
     libion_ulit \
     libipsec_ims_shr \
-    libladder \
     libmnetlink_v104 \
     libmtkares \
     libmtkcutils \
@@ -1034,7 +1031,7 @@ PRODUCT_PACKAGES += \
     libaiselector \
     libdpframework \
     libgpudataproducer \
-    libmnl \
+    libmnl_mtk \
     libneuron_platform.vpu \
     libneuron_runtime.5 \
     libnir_neon_driver \
@@ -1113,7 +1110,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.pq@2.7 \
     vendor.mediatek.hardware.pq@2.8 \
     vendor.mediatek.hardware.pq@2.9 \
-    vendor.mediatek.hardware.videotelephony@1.0 \
+    vendor.mediatek.hardware.videotelephony@1.0_vendor \
     vendor.transsion.hardware.trancam.trancamserver@1.0 \
     vendor.trustonic.tee.tui@1.0 \
     vendor.trustonic.tee@1.0 \
@@ -1121,12 +1118,11 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service-mediatek.xml \
     android.hardware.biometrics.fingerprint@2.3-service.transsion.xml \
     android.hardware.neuralnetworks@1.3-service-mtk-mdla-dsp-gpu.xml \
-    android.hardware.usb@1.2-service-mediatekv2.xml \
     gnss-mtk.xml \
     gnss@2.1-service.xml \
     lbs_hidl_service@1.0.xml \
-    manifest.xml \
     manifest_android.hardware.drm@1.4-service.widevine.xml \
+    manifest_goodix.xml \
     manifest_media_c2_V1_2_default.xml \
     vendor.transsion.hardware.trancam.trancamserver@1.0.xml \
     kpoc_charger \
@@ -1146,7 +1142,6 @@ PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.2-mediatek-64b \
     android.hardware.neuralnetworks@1.3-service-mtk-neuron \
     android.hardware.thermal@2.0-service.mtk \
-    android.hardware.usb@1.2-service-mediatekv2 \
     camerahalserver \
     mtkfusionrild \
     tetheroffloadservice \
@@ -1182,8 +1177,7 @@ PRODUCT_PACKAGES += \
     v3avpud \
     volte_clientapi_ua \
     volte_rcs_ua \
-    wifi_dump \
-    wlan_assistant
+    wifi_dump
 
 PRODUCT_PACKAGES += \
     vendor_lib_libmtk_drvb_so \
@@ -1201,7 +1195,7 @@ PRODUCT_PACKAGES += \
     vendor_lib64_libaiselector_so \
     vendor_lib64_libdpframework_so \
     vendor_lib64_libgpudataproducer_so \
-    vendor_lib64_libmnl_so \
+    vendor_lib64_libmnl_mtk_so \
     vendor_lib64_libmtk_drvb_so \
     vendor_lib64_libneuron_platform_vpu_so \
     vendor_lib64_libneuron_runtime_5_so \
